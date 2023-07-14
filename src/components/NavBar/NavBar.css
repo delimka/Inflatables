@@ -1,0 +1,46 @@
+/* NavBar (1285-1600) */ 
+
+
+.navbar {
+  padding-left: 145px;
+  padding-right: 250px;
+  height: 100px;
+  background-color: rgba(255, 203, 203, 0.7); /* Initial background color */
+  border-radius: 20% 50% 50% 20%;
+  transition: background-color 0.3s ease; /* Transition effect for the background color */
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 203, 203, 1); /* Background color when scrolled */
+}
+
+  
+  /* MenuList items edit */
+  .menuList {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    
+  }
+  
+  .menuList:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  /*  Each element from menuList besides the HOME */
+
+  .menuList + .menuList {
+    margin-left: 36px;
+  }
+
+
+  /* logo */
+
+  .logo {
+
+     width: 263px;
+      height: 89px; 
+  }
+  

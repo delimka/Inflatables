@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import images from '../../constants/images';
+import './NavBar.css';
 
 const NavBar = () => {
+  useEffect(() => {
+    const navbar = document.querySelector('.navbar');
+    const scrollThreshold = 300; // Change this value to adjust the scroll threshold
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > scrollThreshold) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar fixed top-0 w-full bg-transparent flex flex-col sm:flex-row justify-between items-center pt-5 z-10" style={{ paddingLeft: '150px', paddingRight: '180px' }}>
+    <nav className="navbar fixed top-0 w-full flex flex-col sm:flex-row justify-between items-center z-10">
       <div>
-        <img src={images.logo} alt="Logo" className="logo" style={{ width: '300px', height: '90px' }} />
+        <img src={images.logo} alt="Logo" className="logo" />
       </div>
-      <div className="menu flex flex-col sm:flex-row gap-2 sm:gap-8 z-20">
-        <li className="menuList text-whiteColor hover:text-blueColor">Jobs</li>
-        <li className="menuList text-whiteColor hover:text-blueColor">Jobs</li>
-        <li className="menuList text-whiteColor hover:text-blueColor">Jobs</li>
-        <li className="menuList text-whiteColor hover:text-blueColor">Jobs</li>
-        <li className="menuList text-whiteColor hover:text-blueColor">Jobs</li>
-      </div>
+      <ul className="menu flex flex-col sm:flex-row z-20 list-none">
+        <li className="menuList sm:mb-0">Home</li>
+        <li className="menuList sm:mb-0">About us</li>
+        <li className="menuList sm:mb-0">Products</li>
+        <li className="menuList sm:mb-0">Contact us</li>
+      </ul>
     </nav>
   );
 };

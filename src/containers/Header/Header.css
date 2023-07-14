@@ -1,0 +1,26 @@
+.header__container{
+    
+       
+        height: 100vh;
+        
+    
+}
+
+.p__mission{
+    display: block;
+
+    width: 400px;
+    height: 222px;
+    margin-top: 430px;
+    margin-left: 145px;
+}
+
+
+
+.header__container--button{
+
+    margin-top: 400px;
+    margin-right: 250px;
+   
+}
+
