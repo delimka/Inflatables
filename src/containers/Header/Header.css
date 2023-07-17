@@ -1,14 +1,11 @@
 .header__container{
-    
        
-        height: 100vh;
+    height: 100vh;
         
-    
 }
 
 .p__mission{
     display: block;
-
     width: 400px;
     height: 222px;
     margin-top: 430px;

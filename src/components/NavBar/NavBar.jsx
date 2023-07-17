@@ -3,18 +3,26 @@ import images from '../../constants/images';
 import './NavBar.css';
 
 const NavBar = () => {
+
+
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
-    const scrollThreshold = 300; // Change this value to adjust the scroll threshold
+    const scrollThreshold = 300; 
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
+
       if (scrollY > scrollThreshold) {
         navbar.classList.add('scrolled');
-      } else {
+  
+      } 
+      else {
         navbar.classList.remove('scrolled');
+      
       }
     };
+
+   
 
     window.addEventListener('scroll', handleScroll);
 

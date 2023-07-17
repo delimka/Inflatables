@@ -3,6 +3,7 @@
     padding-top: 143px;
     padding-left: 145px;
     padding-right: 200px;
+    margin-bottom: 100px;
     height: 100vh; 
     display: grid;
     grid-template-areas:
@@ -14,13 +15,24 @@
   }
   .h__aboutus{
     grid-area: h1;
+    font-size: 48px;
+    font-weight: 500;
+    text-shadow: 0.4px 0.6px 3px #040000;
+    
+   
   }
 
   .p__aboutus{
     grid-area: p;
+    font-size: 20;
+    font-weight: 400;
+  
   }
   
   .photo-slider {
+
+    padding-bottom: 70px;
+    padding-top: 60px;
     grid-area: slider;
   }
   
