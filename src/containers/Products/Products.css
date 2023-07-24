@@ -1,51 +1,92 @@
-.products_container {
-    margin-top: auto;
-    padding-left: 145px;
-    padding-right: 200px;
-    height: 100vh;
-    display: grid;
-    grid-template-areas:
-      'h'
-      'row_tabs1'
-      'space'
-      'row_tabs2'
-      'about_product'
-      'contact_us'
-      'image_list';
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto; /* Adjust grid row sizes */
+.products-container {
+  padding-left: 145px;
+  padding-right: 100px;
+  /* Remove padding-top, height, and display properties */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+  
+  .heading {
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-shadow: 0.4px 0.6px 3px #040000;
   }
   
-  .h {
-    grid-area: h;
-  }
-  
-  .row_tabs1 {
-    grid-area: row_tabs1;
+  .row-tabs1, .row-tabs2 {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+   
+  }
+  .row2__rounded-button{
+    border: none;
+    background-color: #eee;
+    border: 1px solid var(--monochrome-black, #212121);
+    padding: 10px 40px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+
+  }
+  
+  .rounded-button {
+    border: none;
+    background-color: #eee;
+    border: 1px solid var(--monochrome-black, #212121);
+    padding: 10px 40px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+  
+  .rounded-button.active {
+    border-radius: 64px;
+    color: #ffffff;
+    background: #4363D6;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  } 
+
+  .row2__rounded-button.active {
+    border-radius: 64px;
+    color: #ffffff;
+    background: #a8a8a8;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .about-product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .menu-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .menu-item h3 {
+    margin-top: 0;
+  }
+  
+  .contact-us {
+    width: 100%;
     
+    border: 1px solid #eee;
   }
   
-  .space {
-    grid-area: space;
+  .image-list {
+  height: auto;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+
   }
-  
-  .row_tabs2 {
-    grid-area: row_tabs2;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .about_product {
-    grid-area: about_product;
-  }
-  
-  .contact_us {
-    grid-area: contact_us;
-  }
-  
-  .image_list {
-    grid-area: image_list;
-  }
-  
