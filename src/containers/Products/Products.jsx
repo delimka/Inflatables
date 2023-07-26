@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Products.css";
 import data from "./products.json";
 import PhotoCollage from "../../components/PhotoCollage/PhotoCollage";
@@ -22,7 +22,7 @@ const Products = () => {
     setMenuItems(filteredItems);
   }, [selectedSubOption]);
 
-  const Options = ["INFLATABLE PRODUCTS", "INFLATABLE MASCOTS", "HELIUM SPHERE", "DSDSDSD", "DSADASDAS", "DASDSA"];
+  const Options = ["INFLATABLE PRODUCTS", "INFLATABLE MASCOTS", "HELIUM SPHERE"];
   const subOptions = {
     "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Film screen", "Balloons", "Mini-Inflatables", "Sports"],
     "INFLATABLE MASCOTS": ["Arc2", "Bott", "Film", "Ballo", "Mini-Infl", "Spdasdds"],
@@ -41,6 +41,31 @@ const Products = () => {
     localStorage.setItem("selectedSubOption", option); // Save the selected sub-option to localStorage
   };
 
+// Creating adaptive line between row 1 and row 2 lists of products
+  const row2Ref = useRef(null);
+
+  // update the line width when the component mounts and whenever the window is resized
+  useEffect(() => {
+    const handleResize = () => {
+      if (row2Ref.current) {
+        const row2Width = row2Ref.current.offsetWidth;
+
+        // Update --line-width with the row2Width value
+        document.documentElement.style.setProperty("--line-width", `${row2Width}px`);
+      }
+    };
+
+    handleResize();
+
+    // for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="products-container">
       <div className="heading">
@@ -57,13 +82,8 @@ const Products = () => {
           </button>
         ))}
       </div>
-      <div className="space"> <svg xmlns="http://www.w3.org/2000/svg" width="1202" height="2" viewBox="0 0 1202 2" fill="none">
-  <g opacity="0.2">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1H1201H1Z" fill="#0A142F"/>
-    <path d="M1 1H1201" stroke="#2B3D51" stroke-linecap="square"/>
-  </g>
-</svg></div>
-      <div className="row-tabs2">
+      <div className="space"> </div>
+      <div className="row-tabs2" ref={row2Ref}>
         {subOptions[selectedOption].map((option) => (
           <button
             key={option}

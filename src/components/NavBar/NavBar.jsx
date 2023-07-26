@@ -32,7 +32,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className="navbar fixed top-0 w-full flex flex-col sm:flex-row justify-between items-center z-10">
+    <nav className="navbar fixed top-0 w-full flex sm:flex-row justify-between items-center z-10">
       <div>
         <img src={images.logo} alt="Logo" className="logo" />
       </div>

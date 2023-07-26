@@ -2,7 +2,6 @@ import React from 'react';
 import './PhotoCollage.css';
 
 const PhotoCollage = ({ images }) => {
-  // Convert the object values (image URLs) to an array
   const slides = Object.values(images);
 
   return (
