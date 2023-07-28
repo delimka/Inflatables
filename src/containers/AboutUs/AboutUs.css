@@ -1,7 +1,6 @@
 
-.grid-container {
-  padding-left: 145px;
-  padding-right: 200px;
+.aboutus__grid-container {
+  
   /* Remove padding-top, height, and display properties */
   display: grid;
   grid-template-areas:
@@ -11,11 +10,8 @@
   grid-template-columns: 1fr 2fr; /* Two columns */
 }
 
-  .h__aboutus{
+  .heading-1{
     grid-area: h1;
-    font-size: 48px;
-    font-weight: 500;
-    text-shadow: 0.4px 0.6px 3px #040000;
   }
 
   .p__aboutus{
@@ -27,8 +23,6 @@
   }
   
   .photo-slider {
-
-    padding-bottom: 70px;
     padding-top: 60px;
     grid-area: slider;
   }

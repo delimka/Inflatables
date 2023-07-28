@@ -67,15 +67,15 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="products-container">
-      <div className="heading">
+    <div className="container products__grid-container">
+      <div className="heading-1">
         <h1>Check our Products</h1>
       </div>
       <div className="row-tabs1">
         {Options.map((option) => (
           <button
             key={option}
-            className={`rounded-button ${selectedOption === option ? "active" : ""}`}
+            className={`rounded-button row1__rounded-button ${selectedOption === option ? "active" : ""}`}
             onClick={() => handleOptionClick(option)}
           >
             {option}
@@ -87,7 +87,7 @@ const Products = () => {
         {subOptions[selectedOption].map((option) => (
           <button
             key={option}
-            className={`row2__rounded-button ${selectedSubOption === option ? "active" : ""}`}
+            className={`rounded-button row2__rounded-button ${selectedSubOption === option ? "active" : ""}`}
             onClick={() => handleSubOptionClick(option)} // Call handleSubOptionClick to update the sub-option
           >
             {option}
