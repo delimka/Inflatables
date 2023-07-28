@@ -4,7 +4,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import './Header.css';
 
 const Header = () => (
-  <div className="header bg-cover bg-no-repeat bg-center " style={{ backgroundImage: `url(${images.introBg})`,  backgroundSize: 'cover',  minHeight: 'calc(100vh)', filter: 'contrast(150%)' }}>
+  <div className="header bg-cover bg-no-repeat bg-center " style={{ backgroundImage: `url(${images.introBg})`,  backgroundSize: 'cover',  minHeight: 'calc(100vh)', filter: 'contrast(200%)' }}>
     <div className="header__container flex flex-row justify-between ">
       <div className="header__container--mission">
         <p className="p__mission text-whiteColor">
