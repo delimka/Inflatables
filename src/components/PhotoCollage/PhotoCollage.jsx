@@ -1,14 +1,12 @@
 import React from 'react';
 import './PhotoCollage.css';
 
-const PhotoCollage = ({ images }) => {
-  const slides = Object.values(images);
-
+const PhotoCollage = ({ imageFilenames }) => {
   return (
     <div className='collage-container'>
-      {slides.map((slide, index) => (
+      {imageFilenames.map((image, index) => (
         <div key={index} className='collage-item'>
-          <img src={slide} alt={`photo_${index}`} className='collage-image' />
+          <img src={image} alt={`photo_${index}`} className='collage-image' />
         </div>
       ))}
     </div>

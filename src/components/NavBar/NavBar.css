@@ -3,8 +3,8 @@
   padding-left: 145px;
   padding-right: 250px;
   height: 80px;
-  background-color: rgba(255, 203, 203, 0.7); /* Initial background color */
-  border-radius: 0px 100px / 100px;
+  background-color: rgba(255, 203, 203, 0.7); 
+  border-radius: 0 0 50px 50px;
   transition: background-color 0.3s ease, opacity 0.3s ease; /* Include both transitions */
   
 }
