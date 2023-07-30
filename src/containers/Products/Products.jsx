@@ -3,6 +3,8 @@ import "./Products.css";
 import data from "./products.json";
 import PhotoCollage from "../../components/PhotoCollage/PhotoCollage";
 import images from "../../constants/collageData/images";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const Products = () => {
   const [selectedOption, setSelectedOption] = useState(() => {
@@ -31,17 +33,31 @@ const Products = () => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    setSelectedSubOption(subOptions[option][0]); // Set the first sub-option as default for the selected top-level option
+    setSelectedSubOption(subOptions[option][0]); 
     localStorage.setItem("selectedOption", option);
     localStorage.setItem("selectedSubOption", subOptions[option][0]);
   };
 
   const handleSubOptionClick = (option) => {
     setSelectedSubOption(option);
-    localStorage.setItem("selectedSubOption", option); // Save the selected sub-option to localStorage
+  
+    // Determine the correct image directory based on the selected sub-option
+    const selectedImageDirectory = option === "Arches" ? "arches" : "bottles";
+  
+    // Get the total number of images available for the selected sub-option
+    const totalImages = 8; // Assuming there are 8 images for each sub-option
+  
+    // Generate an array of image filenames for the selected sub-option
+    const imageFilenames = Array.from({ length: totalImages }, (_, index) => `../../assets/collage/${selectedImageDirectory}/images_${index + 1}.jpg`);
+  
+    setMenuItems(imageFilenames); // Set the image filenames for the selected sub-option
+  
+    localStorage.setItem("selectedSubOption", option);
   };
+  
 
 // Creating adaptive line between row 1 and row 2 lists of products
+
   const row2Ref = useRef(null);
 
   // update the line width when the component mounts and whenever the window is resized
@@ -98,25 +114,34 @@ const Products = () => {
       <div className="about-product">
         {selectedSubOption === "Arches" && (
           <div className="menu-item">
-            <h3>{menuItems[0]?.name}</h3>
+            <h2 className="heading-2">{menuItems[0]?.name}</h2>
             <p>{menuItems[0]?.description}</p>
           </div>
         )}
         {menuItems.length > 0 && selectedSubOption !== "Arches" ? (
           menuItems.map((data, index) => (
             <div key={index} className="menu-item">
-              <h3>{data.name}</h3>
+              <h2 className="heading-2">{data.name}</h2>
               <p>{data.description}</p>
             </div>
           ))
         ) : null}
-        <div className="contact-us"> </div>
+        <div className="container-contact-us">
+          <p>
+            <u>For more information and orders</u>
+          </p>
+          <div className="arrow">
+          <FontAwesomeIcon icon={faArrowDown } className="fa-beat" />
+           </div>
+           <button className="btn__contact"> Contact us</button>
+        </div>
       </div>
 
       
       <div className="image-list">
-      <PhotoCollage images={images} />
+      <PhotoCollage imageFilenames={Object.values(images)} />
       </div>
+      
     </div>
   );
 };

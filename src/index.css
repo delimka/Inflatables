@@ -7,24 +7,26 @@
 
 :root {
   font-family: 'Roboto', sans-serif;
-
-    
 }
 
 .container {
-  padding-left: 145px;
-  padding-right: 200px;
-  margin-bottom: 150px;
-
+  padding-left: 7%; 
+  padding-right: 7%; 
+  margin-bottom: 110px;
 }
+
 
 .heading-1{
 
   font-size: 48px;
   font-weight: 500;
-
   text-shadow: 0.4px 0.6px 3px #040000;
 
+}
+.heading-2{
+  font-size: 20px;
+  font-weight: 500;
+  
 }
 
 * {
