@@ -12,7 +12,7 @@
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #D9D9D9; 
+  background-color: rgba(255, 203, 203, 1);
   border-radius: 0 0 50% 50%;
 }
 
@@ -45,8 +45,7 @@
 
 .social-media-icons {
   display: flex;
-  color: #40cc1d;
-  gap: 10px;
+  gap: 25px;
 }
 
 .divider {
