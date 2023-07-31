@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Products.css";
 import data from "./products.json";
 import PhotoCollage from "../../components/PhotoCollage/PhotoCollage";
-import images from "../../constants/collageData/images";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import images from "../../constants/collageData/images"; 
+
 
 const Products = () => {
   const [selectedOption, setSelectedOption] = useState(() => {
@@ -26,7 +27,7 @@ const Products = () => {
 
   const Options = ["INFLATABLE PRODUCTS", "INFLATABLE MASCOTS", "HELIUM SPHERE"];
   const subOptions = {
-    "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Film screen", "Balloons", "Mini-Inflatables", "Sports"],
+    "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Screens", "Balloons", "Mini-Inflatables", "Sports"],
     "INFLATABLE MASCOTS": ["Arc2", "Bott", "Film", "Ballo", "Mini-Infl", "Spdasdds"],
     "HELIUM SPHERE": ["Arcada", "Bottdasd", "Filmdasd", "Ballodsad", "Mini-Inflds", "Spdasdas"],
   };
@@ -42,14 +43,27 @@ const Products = () => {
     setSelectedSubOption(option);
   
     // Determine the correct image directory based on the selected sub-option
-    const selectedImageDirectory = option === "Arches" ? "arches" : "bottles";
+    let selectedImageDirectory;
+  
+    if (option === "Arches") {
+      selectedImageDirectory = "arches";
+    } else if (option === "Bottles") {
+      selectedImageDirectory = "bottles";
+    } else if (option === "Mini-Inflatables") {
+      selectedImageDirectory = "mini-inflatables";
+    } else {
+      // Add more conditions for other sub-options if needed
+    }
   
     // Get the total number of images available for the selected sub-option
     const totalImages = 8; // Assuming there are 8 images for each sub-option
   
     // Generate an array of image filenames for the selected sub-option
-    const imageFilenames = Array.from({ length: totalImages }, (_, index) => `../../assets/collage/${selectedImageDirectory}/images_${index + 1}.jpg`);
-  
+    const imageFilenames = Array.from({ length: totalImages }, (_, index) =>
+      `../../assets/collage/${selectedImageDirectory}/${selectedImageDirectory}-${index + 1}.jpg`
+    );
+    console.log(imageFilenames); // Add this line to check the image filenames
+
     setMenuItems(imageFilenames); // Set the image filenames for the selected sub-option
   
     localStorage.setItem("selectedSubOption", option);
@@ -84,9 +98,13 @@ const Products = () => {
 
   return (
     <div className="container products__grid-container">
+
+
       <div className="heading-1">
         <h1>Check our Products</h1>
       </div>
+
+
       <div className="row-tabs1">
         {Options.map((option) => (
           <button
@@ -98,7 +116,11 @@ const Products = () => {
           </button>
         ))}
       </div>
+
+
       <div className="space"> </div>
+
+
       <div className="row-tabs2" ref={row2Ref}>
         {subOptions[selectedOption].map((option) => (
           <button
@@ -126,6 +148,8 @@ const Products = () => {
             </div>
           ))
         ) : null}
+
+
         <div className="container-contact-us">
           <p>
             <u>For more information and orders</u>
@@ -139,8 +163,11 @@ const Products = () => {
 
       
       <div className="image-list">
-      <PhotoCollage imageFilenames={Object.values(images)} />
-      </div>
+        {images[selectedSubOption.toLowerCase()] ? (
+          <PhotoCollage imageFilenames={images[selectedSubOption.toLowerCase()]} />
+        ) : (
+          <p>No images found for the selected product.</p>
+        )}      </div>
       
     </div>
   );

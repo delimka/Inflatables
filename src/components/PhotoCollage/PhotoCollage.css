@@ -1,19 +1,23 @@
 .collage-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Start items from the left to create two rows */
-  background-color: black;
+  justify-content: flex-start;
   padding: 5px;
+
 }
 
 .collage-item {
-  flex: 1 0 calc(25% - 10px); /* Four items per row; allow items to grow and shrink, with a calculated width for equal spacing */
-  margin: 5px; /* Add margin on all sides of each item to create equal spacing */
-  overflow: hidden; /* Hide any content that overflows the item container */
+  flex: 1 0 calc(25% - 10px);
+  margin: 5px;
+  overflow: hidden;
+  position: relative; 
+  max-height: 220px; /* Limit the maximum height of each item */
+  
+
 }
 
 .collage-image {
   width: 100%;
-  height: 100%; /* Set the height to 100% to fill the entire item container */
-  /* Maintain aspect ratio and crop images to fit within the item */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and crop images to fit within the item container */
 }
