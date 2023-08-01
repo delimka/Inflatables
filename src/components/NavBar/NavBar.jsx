@@ -8,7 +8,7 @@ const NavBar = () => {
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
     const scrollThreshold = 300;
-    const scrollThresholdDown = 800;
+    const scrollThresholdDown = 780;
     const scrollThresholdProductsMin = 1650;
     const scrollThresholdProductsMax = 2000;
 

@@ -25,11 +25,11 @@ const Products = () => {
     setMenuItems(filteredItems);
   }, [selectedSubOption]);
 
-  const Options = ["INFLATABLE PRODUCTS", "INFLATABLE MASCOTS", "HELIUM SPHERE"];
+  const Options = ["INFLATABLE PRODUCTS", "TENTS", "OTHER INFLATABLES"];
   const subOptions = {
-    "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Screens", "Balloons", "Mini-Inflatables", "Sports"],
-    "INFLATABLE MASCOTS": ["Arc2", "Bott", "Film", "Ballo", "Mini-Infl", "Spdasdds"],
-    "HELIUM SPHERE": ["Arcada", "Bottdasd", "Filmdasd", "Ballodsad", "Mini-Inflds", "Spdasdas"],
+    "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Screens", "Balloons", "Mini", "Party"],
+    "TENTS": ["Airone", "Marquee", "Pagoda", "Duplex", "Standing"],
+    "OTHER INFLATABLES": ["Arcada", "Bottdasd", "Filmdasd", "Ballodsad", "Mini-Inflds", "Spdasdas"],
   };
 
   const handleOptionClick = (option) => {
@@ -42,30 +42,11 @@ const Products = () => {
   const handleSubOptionClick = (option) => {
     setSelectedSubOption(option);
   
-    // Determine the correct image directory based on the selected sub-option
-    let selectedImageDirectory;
+    // Get the image filenames based on the selected sub-option
+    const imageFilenames = images[option.toLowerCase()];
   
-    if (option === "Arches") {
-      selectedImageDirectory = "arches";
-    } else if (option === "Bottles") {
-      selectedImageDirectory = "bottles";
-    } else if (option === "Mini-Inflatables") {
-      selectedImageDirectory = "mini-inflatables";
-    } else {
-      // Add more conditions for other sub-options if needed
-    }
-  
-    // Get the total number of images available for the selected sub-option
-    const totalImages = 8; // Assuming there are 8 images for each sub-option
-  
-    // Generate an array of image filenames for the selected sub-option
-    const imageFilenames = Array.from({ length: totalImages }, (_, index) =>
-      `../../assets/collage/${selectedImageDirectory}/${selectedImageDirectory}-${index + 1}.jpg`
-    );
-    console.log(imageFilenames); // Add this line to check the image filenames
-
-    setMenuItems(imageFilenames); // Set the image filenames for the selected sub-option
-  
+    setMenuItems(imageFilenames);
+    
     localStorage.setItem("selectedSubOption", option);
   };
   
