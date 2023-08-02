@@ -97,3 +97,26 @@
     color: white;
     padding: 5px 20px ;
   }
+
+  @media only screen and (max-width: 1025px) {
+
+    .products__grid-container {
+     
+  
+      margin-left: 5%;
+    }
+    
+  }
+  
+  
+  @media only screen and (max-width: 900px) {
+  
+    .products__grid-container {
+  
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) and (min-width: 914px) {
+
+  }

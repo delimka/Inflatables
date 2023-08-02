@@ -1,21 +1,13 @@
 /* NavBar */
 .navbar {
-  padding-left: 145px;
-  padding-right: 250px;
+  padding-left: 10%; 
+  padding-right: 15%; 
   height: 80px;
-  background-color: rgba(255, 203, 203, 0.7); 
+  background-image: linear-gradient(to bottom,#ee9ca7, #ffdde1);
   border-radius: 0 0 50px 50px;
   transition: background-color 0.3s ease, opacity 0.3s ease; 
-
   
-}
-
-.navbar.scrolled {
-  background-color: rgba(255, 203, 203, 1);
-}
-
-.navbar.hidden {
-  opacity: 0;
+  
 }
 
 
@@ -41,4 +33,106 @@
 .logo {
   width: 200px;
   height: 70px;
+}
+
+
+/* New styles for burger menu icon and hidden menu items */
+.menu-icon {
+  display: none; /* Initially hide the burger menu icon on larger screens */
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  margin: 6px 0;
+  transition: background-color 0.3s ease;
+}
+
+.menu.visible .bar {
+  background-color: #fff; /* Change the color of the burger menu icon when the menu is visible */
+}
+
+/* creating burger menu */
+
+@media only screen and (max-width: 790px) {
+  .navbar {
+    padding-left: 10%; 
+    padding-right: 15%; 
+  }
+
+  .menu-icon {
+    display: block; 
+  }
+
+  .menu {
+    display: none; /* Hide the menu items initially */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+  }
+
+  .menu.visible {
+    display: flex; /* Show the menu items when the menu is visible */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menuList {
+    padding: 15px;
+    font-size: 20px; /* Adjust the font size for smaller screens */
+  }
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (min-width: 791px) {
+
+  .menu {
+    display: flex; 
+  }
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .navbar {
+    padding-left: 8%; 
+    padding-right: 12%; 
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .navbar {
+    padding-left: 6%; 
+    padding-right: 10%; 
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  
+  .menuList {
+  
+    font-size: 20px;
+  }
+  .logo{
+    width: 180px;
+    height: 60px;
+  }
+  .navbar {
+
+    height: 70px;}
+  
+}
+
+@media only screen and (max-width: 790px) {
+ 
 }
