@@ -1,24 +1,85 @@
-.header__container{
-       
-    height: 100vh;
-    margin-bottom: 110px;
-        
+/* Updated CSS */
+.header {
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh);
+  filter: contrast(200%);
 }
 
-.p__mission{
-    display: block;
-    width: 400px;
-    height: 222px;
-    margin-top: 430px;
-    margin-left: 145px;
+.header__container {
+  display: flex;
+  height: 100vh;
+  margin-bottom: 110px;
+  
 }
 
+.p__mission {
+  display: block;
+  width: 400px;
+  height: 222px;
+  margin-top: 430px;
+  color: white;
+}
 
+.header__container--mission {
+  flex-grow: 1;
+  margin-left: 10%;
+}
 
-.header__container--button{
+.header__check--button {
+  margin-top: 400px;
+  padding-right: 15%;
+}
 
-    margin-top: 400px;
-    margin-right: 250px;
+/* Hamburger menu styles (if you want to add later) */
+.burger-menu {
+  /* Your styles here */
+}
+
+/* Show menu items for smaller screens (if you want to add later) */
+@media only screen and (max-width: 870px) {
+  .menu {
+    /* Your styles here */
+  }
+}
+
+  @media only screen and (max-width: 1280px) {
+    .header__check--button {
+      padding-right: 12%;
+    }
    
-}
+  }
 
+
+  @media only screen and (max-width: 1180px) {
+    .navbar {
+      padding-left: 6%; 
+      padding-right: 10%; 
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .header__container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 80px;
+      height: 100vh;
+     
+    }
+    
+    .p__mission {
+      margin-top: 100px;
+      width: 500px;
+      height: 262px;
+     
+    }
+    
+    .header__check--button {
+      margin-top: 350px;
+      font-size: 54px;
+      padding-right: 0;
+    }
+  }
+  

@@ -4,10 +4,10 @@ import './NavBar.css';
 
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
+ 
+  const [menuVisible, setMenuVisible] = useState(false);
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
-    const scrollThreshold = 300;
     const scrollThresholdDown = 780;
     const scrollThresholdProductsMin = 1650;
     const scrollThresholdProductsMax = 2000;
@@ -15,11 +15,6 @@ const NavBar = () => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
     
-      if (currentScrollPos > scrollThreshold) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
     
       if (currentScrollPos > prevScrollPos && currentScrollPos > scrollThresholdDown) {
         navbar.classList.add('hidden');
@@ -40,12 +35,21 @@ const NavBar = () => {
     };
   }, [prevScrollPos]);
 
+  const handleBurgerClick = () => {
+    setMenuVisible((prev) => !prev);
+  };
+
   return (
-    <nav className={`navbar fixed top-0 w-full flex sm:flex-row justify-between items-center z-10`}>
+    <nav className={`navbar fixed top-0 w-full flex justify-between items-center z-10`}>
       <div>
         <img src={images.logo} alt="Logo" className="logo" />
       </div>
-      <ul className="menu flex flex-col sm:flex-row z-20 list-none">
+      <div className="menu-icon" onClick={handleBurgerClick}>
+        <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
+        <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
+        <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
+      </div>
+      <ul className={`menu ${menuVisible ? 'visible' : ''} list-none`}>
         <li className="menuList sm:mb-0">Home</li>
         <li className="menuList sm:mb-0">About us</li>
         <li className="menuList sm:mb-0">Products</li>
@@ -54,5 +58,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;

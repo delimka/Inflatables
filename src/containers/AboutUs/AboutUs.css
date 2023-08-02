@@ -1,7 +1,6 @@
 
 .aboutus__grid-container {
   
-  /* Remove padding-top, height, and display properties */
   display: grid;
   grid-template-areas:
     'h1 p'
@@ -27,3 +26,47 @@
     grid-area: slider;
   }
   
+  /* Media Query for screens less than 1024px */
+
+@media only screen and (max-width: 1025px) {
+
+  .aboutus__grid-container {
+   
+    grid-template-areas:
+      'h1'
+      'p'
+      'slider';
+    grid-template-rows: auto auto auto; /* Three rows with equal height */
+    grid-template-columns: 1fr;
+
+    margin-left: 7%;
+  }
+  
+}
+
+
+@media only screen and (max-width: 900px) {
+
+  .aboutus__grid-container {
+
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .aboutus__grid-container {
+
+    margin-left: 5%;
+  }
+}
+
+
+
+@media only screen and (max-width: 678px) {
+
+  .aboutus__grid-container {
+
+    margin-left: 0;
+  }
+}
