@@ -49,3 +49,24 @@
     transition-duration: 1s;
     transform: scale(1.0);
   }
+
+  @media only screen and (max-width: 767.9px) {
+    .right-arrow,
+    .left-arrow {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .right-arrow,
+    .left-arrow {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 470px) {
+    .right-arrow,
+    .left-arrow {
+      font-size: 1.5rem;
+    }
+  }

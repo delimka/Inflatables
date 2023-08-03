@@ -45,7 +45,7 @@
 .menu-icon .bar {
   width: 30px;
   height: 3px;
-  background-color: #000;
+  background-color: #ffffff;
   margin: 6px 0;
   transition: background-color 0.3s ease;
 }

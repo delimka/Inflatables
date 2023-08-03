@@ -35,17 +35,69 @@
   
 }
 
+.header {
+
+  margin-bottom: 150px;
+}
 
 *{
   scroll-behavior: smooth;
 }
 
 
-@media only screen and (max-width: 718px) {
+@media only screen and (max-width: 768px) {
   .heading-1{
 
     font-size: 36px;
     font-weight: 500;
   
   }
+
+  p {
+    font-size: 16px;
+  }
 }
+
+
+@media only screen and (max-width: 1000px) and (min-width: 900px) {
+  .container {
+    padding-left: 7%; 
+    padding-right: 3%;
+  }
+
+}
+
+
+@media only screen and (max-width: 1200px){
+
+.header{
+  margin-bottom: 100px;
+  height: 70vh;
+}
+
+}
+
+@media only screen and (max-width: 760px){
+
+  .header{
+    margin-bottom: 70px;
+    height: 70vh;
+  }
+
+  .container{
+    padding-bottom: 70px;
+
+  }
+  .heading-1{
+    padding-bottom: 25px;
+  }
+  
+  }
+
+  @media only screen and (max-width: 320px) {
+    p{
+      font-size: 14px;
+
+    }
+
+  }
