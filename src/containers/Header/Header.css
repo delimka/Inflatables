@@ -15,8 +15,8 @@
 
 .p__mission {
   display: block;
-  width: 400px;
-  height: 222px;
+  width: 350px;
+  height: 190px;
   margin-top: 430px;
   color: white;
 }
@@ -31,32 +31,17 @@
   padding-right: 15%;
 }
 
-/* Hamburger menu styles (if you want to add later) */
-.burger-menu {
-  /* Your styles here */
-}
 
-/* Show menu items for smaller screens (if you want to add later) */
-@media only screen and (max-width: 870px) {
-  .menu {
-    /* Your styles here */
-  }
-}
+
 
   @media only screen and (max-width: 1280px) {
     .header__check--button {
       padding-right: 12%;
     }
-   
+
   }
 
 
-  @media only screen and (max-width: 1180px) {
-    .navbar {
-      padding-left: 6%; 
-      padding-right: 10%; 
-    }
-  }
 
   @media only screen and (max-width: 900px) {
     .header__container {
@@ -64,22 +49,65 @@
       flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
-      margin-bottom: 80px;
-      height: 100vh;
      
     }
     
+    .header__container--mission{
+      margin-left: 0;
+      height: auto;
+    }
+
     .p__mission {
-      margin-top: 100px;
+      margin-top: 12%;
       width: 500px;
-      height: 262px;
+      height: auto;
      
     }
     
     .header__check--button {
-      margin-top: 350px;
+      margin-top: 250px;
       font-size: 54px;
       padding-right: 0;
     }
+
+    .header{
+      min-height: calc(80vh);
+    }
+    
   }
   
+  @media only screen and (max-width: 600px) {
+
+    .p__mission {
+      width: auto;
+      height: auto;
+      padding: 0 5%;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 470px) {
+
+
+    .header__container--mission{
+
+      margin-left: 0;
+    }
+    .header__check--button{
+      margin-top: 50%;
+      font-size: 36px;
+      margin-bottom: 12%;
+      
+    }
+
+  }
+
+  @media only screen and (max-width: 400px) {
+    .header__check--button{
+      margin-bottom: 0;
+      margin-top: 60%;
+
+    }
+  }
+

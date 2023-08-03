@@ -60,3 +60,75 @@
   padding-right: 2%;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 870px) {
+
+  .links {
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .social-media-icons {
+    gap: 15px; 
+  }
+
+  .social-media-icons a {
+    font-size: 0.7rem; 
+  }
+
+  
+  .copyright {
+    font-size: 14px;
+  }
+}
+
+
+
+@media only screen and (max-width: 570px) {
+  
+
+  .social-media-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    
+  }
+
+  .social-media-icons a {
+    font-size: 10px;
+  }
+
+  .links {
+    margin-left: 0px;
+  }
+
+  .links__icon-container {
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+
+  
+  .links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; 
+ 
+  }
+
+  .links > :not(:first-child) {
+    margin-left: 0;
+  }
+
+  .copyright{
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}

@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => (
-  <div className="header bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${images.introBg})`, backgroundSize: 'cover', minHeight: 'calc(100vh)', filter: 'contrast(200%)' }}>
+  <div className="header bg-cover bg-no-repeat bg-center " style={{ backgroundImage: `url(${images.introBg})`, backgroundSize: 'cover', filter: 'contrast(200%)' }}>
     <div className="header__container">
       <div className="header__container--mission">
         <p className="p__mission text-white">
           Dpinflatables offers inflatable bubbles for businesses, corporate events, parties and a variety of other occasions. 
-          We have partnered with some of the best engineers and highly qualified designers to create the highest quality product possible for our clients.
         </p>
       </div>
       <div className="header__check--button">
