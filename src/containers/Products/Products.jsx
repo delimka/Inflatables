@@ -3,8 +3,9 @@ import "./Products.css";
 import data from "./products.json";
 import PhotoCollage from "../../components/PhotoCollage/PhotoCollage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import images from "../../constants/collageData/images"; 
+
 
 
 const Products = () => {
@@ -51,13 +52,23 @@ const Products = () => {
   };
   
 
-// Creating adaptive line between row 1 and row 2 lists of products
 
+  const [arrowDown, setArrowDown] = useState(true);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+// Creating adaptive line between row 1 and row 2 lists of products
   const row2Ref = useRef(null);
 
-  // update the line width when the component mounts and whenever the window is resized
+  // updating the line width when the component mounts and whenever the window is resized
   useEffect(() => {
     const handleResize = () => {
+
+      //changing arrow direction in about us
+      setArrowDown(window.innerWidth >= 768.5);
+      //changing button
+      setScreenWidth(window.innerWidth);
+
+
       if (row2Ref.current) {
         const row2Width = row2Ref.current.offsetWidth;
 
@@ -136,9 +147,15 @@ const Products = () => {
             <u>For more information and orders</u>
           </p>
           <div className="arrow">
-          <FontAwesomeIcon icon={faArrowDown } className="fa-beat" />
-           </div>
-           <button className="btn__contact"> Contact us</button>
+            {arrowDown ? (
+              <FontAwesomeIcon icon={faArrowDown} className="fa-beat" />
+            ) : (
+              <FontAwesomeIcon icon={faArrowRight} className="fa-beat" />
+            )}
+          </div>
+            <button className="btn__contact">
+            {screenWidth < 456 ? "Contact" : "Contact us"}
+            </button>        
         </div>
       </div>
 

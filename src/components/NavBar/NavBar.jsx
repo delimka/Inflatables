@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import images from '../../constants/images';
 import './NavBar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
- 
   const [menuVisible, setMenuVisible] = useState(false);
+
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
     const scrollThresholdDown = 780;
@@ -14,8 +16,7 @@ const NavBar = () => {
 
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-    
-    
+
       if (currentScrollPos > prevScrollPos && currentScrollPos > scrollThresholdDown) {
         navbar.classList.add('hidden');
       } else if (currentScrollPos > scrollThresholdProductsMin && currentScrollPos < scrollThresholdProductsMax) {
@@ -23,10 +24,9 @@ const NavBar = () => {
       } else {
         navbar.classList.remove('hidden');
       }
-    
+
       setPrevScrollPos(currentScrollPos);
     };
-    
 
     window.addEventListener('scroll', handleScroll);
 
@@ -39,6 +39,10 @@ const NavBar = () => {
     setMenuVisible((prev) => !prev);
   };
 
+  const handleCloseClick = () => {
+    setMenuVisible(false);
+  };
+
   return (
     <nav className={`navbar fixed top-0 w-full flex justify-between items-center z-10`}>
       <div>
@@ -49,13 +53,20 @@ const NavBar = () => {
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
       </div>
+      
       <ul className={`menu ${menuVisible ? 'visible' : ''} list-none`}>
-        <li className="menuList sm:mb-0">Home</li>
-        <li className="menuList sm:mb-0">About us</li>
-        <li className="menuList sm:mb-0">Products</li>
-        <li className="menuList sm:mb-0">Contact us</li>
+        <li className="menuList">Home</li>
+        <li className="menuList">About us</li>
+        <li className="menuList">Products</li>
+        <li className="menuList ">Contact us</li>
       </ul>
+      {menuVisible && (
+        <div className="close-icon" onClick={handleCloseClick}>
+          <FontAwesomeIcon icon={faTimes} />
+        </div>
+      )}
     </nav>
   );
 };
+
 export default NavBar;

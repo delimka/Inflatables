@@ -119,4 +119,47 @@
       gap: 10px;
     }
 
+    .rounded-button {
+      padding: 6px 20px;
+      cursor: pointer;
+      font-size: 15px;
+
+    }
+
+    .container-contact-us {
+      flex-direction: row;
+      margin-top: 10px;
+      gap: 25px;
+      
+    }
+    .btn__contact{
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .space{
+      margin: 10px 0;
+
+    }
+  }
+
+  @media only screen and (max-width: 490px) {
+
+    .container-contact-us {
+      flex-direction: row;
+      margin-top: 7px;
+      gap: 15px;
+      
+    }
+    .rounded-button {
+      padding: 4px 16px;
+      cursor: pointer;
+      font-size: 14px;
+
+    }
+    .btn__contact{
+      font-size: 14px;
+
+    }
+
   }
