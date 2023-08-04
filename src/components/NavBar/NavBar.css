@@ -3,8 +3,8 @@
   padding-left: 10%; 
   padding-right: 15%; 
   height: 80px;
-  background-image: linear-gradient(to bottom,#ee9ca7, #ffdde1);
-  border-radius: 0 0 50px 50px;
+  background: linear-gradient(#e66465, #9198e5);
+  border-radius: 0 0 40px 40px;
   transition: background-color 0.3s ease, opacity 0.3s ease; 
   
   
@@ -38,7 +38,7 @@
 
 /* New styles for burger menu icon and hidden menu items */
 .menu-icon {
-  display: none; /* Initially hide the burger menu icon on larger screens */
+  display: none; /* Initially hide */
   cursor: pointer;
 }
 
@@ -51,12 +51,11 @@
 }
 
 .menu.visible .bar {
-  background-color: #fff; /* Change the color of the burger menu icon when the menu is visible */
+  background-color: #fff; 
 }
-
 /* creating burger menu */
 
-@media only screen and (max-width: 790px) {
+@media only screen and (max-width: 791px) {
   .navbar {
     padding-left: 10%; 
     padding-right: 15%; 
@@ -72,8 +71,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background: linear-gradient(#e66465, #9198e5);
     list-style: none;
+    height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     border-radius: 10px;
@@ -82,7 +83,7 @@
   }
 
   .menu.visible {
-    display: flex; /* Show the menu items when the menu is visible */
+    display: flex; /* Shsow the menu items when the menu is visible */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -90,8 +91,21 @@
 
   .menuList {
     padding: 15px;
-    font-size: 20px; /* Adjust the font size for smaller screens */
+    font-size: 35px; 
   }
+  .menuList + .menuList {
+    margin-left: 0;
+  }
+
+  .close-icon{
+    color: rgb(255, 255, 255);
+    z-index: 10000;
+    font-size: 50px;
+    padding-top: 15px;
+    cursor: pointer;
+
+  }
+
 }
 
 /* Adjust styles for smaller screens */
@@ -133,6 +147,3 @@
   
 }
 
-@media only screen and (max-width: 790px) {
- 
-}
