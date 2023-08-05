@@ -11,7 +11,7 @@ const Header = () => (
     <div className="header__container">
       <div className="header__container--mission">
         <p className="p__mission">
-          Dpinflatables offers inflatable products for businesses, corporate events, parties and a variety of other occasions. 
+          <strong>DPinflatables</strong> offers inflatable products for businesses, corporate events, parties and a variety of other occasions. 
         </p>
       </div>
       <div className="header__check--button">

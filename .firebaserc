@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "dpinflatables-e6c0e"
-  }
+    "default": "dpinflatables-e6c0e",
+    "dsa": "dpinflatables-e6c0e"
+  },
+  "targets": {},
+  "etags": {}
 }

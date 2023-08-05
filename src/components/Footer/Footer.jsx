@@ -38,6 +38,8 @@ const Footer = () => {
           </Link>
         </li>
           <a href="/">Contact us</a>
+
+          
         </div>
 
         <div className="social-media-icons"> 

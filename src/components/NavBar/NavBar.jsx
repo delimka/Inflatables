@@ -6,6 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 
 
+
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [menuVisible, setMenuVisible] = useState(false);
@@ -60,7 +61,8 @@ const NavBar = () => {
       <ul className={`menu ${menuVisible ? 'visible' : ''} list-none`}>
 
         {/* smooth navigation */}
-       
+        <img src={images.logo} alt="Logo" className="burgerlogo" />
+
         <li className="menuList">
           <Link
             to="home" 
@@ -104,13 +106,14 @@ const NavBar = () => {
             to="contact" 
             spy={true}
             smooth={true}
-            duration={500}
+            duration={300}
             offset={-80}
             onClick={handleCloseClick}
           >
             Contact us
           </Link>
         </li>
+       
       </ul>
       {menuVisible && (
         <div className="close-icon" onClick={handleCloseClick}>
