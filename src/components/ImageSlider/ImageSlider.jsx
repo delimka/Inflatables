@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './ImageSlider.css'
+import React, { useState, useEffect } from 'react';
+import './ImageSlider.css';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const ImageSlider = ({ images }) => {
   const [current, setCurrent] = useState(0);
-  const slides = Object.values(images); // Convert object values to an array
+  const slides = Object.values(images);
   const length = slides.length;
 
   const nextSlide = () => {
@@ -19,6 +19,14 @@ const ImageSlider = ({ images }) => {
     return null;
   }
 
+  useEffect(() => {
+    // Preload images
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide;
+    });
+  }, [slides]);
+
   return (
     <section className='slider'>
       <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
@@ -29,18 +37,12 @@ const ImageSlider = ({ images }) => {
             className={index === current ? 'slide active' : 'slide'}
             key={index}
           >
-            {index === current && (
-              <img src={slide} alt='travel image' className='image' />
-            )}
+            {index === current && <img src={slide} alt='travel image' className='image' />}
           </div>
         );
       })}
-
-      
     </section>
   );
-
-
 };
 
 export default ImageSlider;

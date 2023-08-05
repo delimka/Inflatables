@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 5px;
+  
 
 }
 
@@ -79,13 +80,20 @@
   background-color: rgba(255, 255, 255, 0.8); 
 }
 
+/* For screens with a maximum width of 490 pixels */
 @media only screen and (max-width: 490px) {
-  .collage-item {
-    margin: 3px;
+  .collage-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 0;
   }
 
-  .collage-container {
-    padding: 3px;
-  
+  .collage-item {
+    flex: none;
+    width: calc(100% - 6px);
+    max-height: 160px;
   }
+
+
 }

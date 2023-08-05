@@ -89,7 +89,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="container products__grid-container">
+    <div className="container products__grid-container" name="products">
 
 
       <div className="heading-1">
@@ -154,7 +154,7 @@ const Products = () => {
             )}
           </div>
             <button className="btn__contact">
-            {screenWidth < 456 ? "Contact" : "Contact us"}
+            {screenWidth < 470 ? "Contact" : "Contact us"}
             </button>        
         </div>
       </div>

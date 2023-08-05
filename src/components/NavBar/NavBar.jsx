@@ -3,15 +3,19 @@ import images from '../../constants/images';
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-scroll';
+
 
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [menuVisible, setMenuVisible] = useState(false);
+  
+ 
 
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
     const scrollThresholdDown = 780;
-    const scrollThresholdProductsMin = 1650;
+    const scrollThresholdProductsMin = 1560;
     const scrollThresholdProductsMax = 2000;
 
     const handleScroll = () => {
@@ -53,12 +57,60 @@ const NavBar = () => {
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
       </div>
-      
       <ul className={`menu ${menuVisible ? 'visible' : ''} list-none`}>
-        <li className="menuList">Home</li>
-        <li className="menuList">About us</li>
-        <li className="menuList">Products</li>
-        <li className="menuList ">Contact us</li>
+
+        {/* smooth navigation */}
+       
+        <li className="menuList">
+          <Link
+            to="home" 
+            spy={true}
+            smooth={true}
+            duration={300}
+            offset={-80} 
+            onClick={handleCloseClick}
+          >
+            Home
+          </Link>
+        </li>
+        <li className="menuList">
+          <Link
+           
+            to="about" 
+            spy={true}
+            smooth={true}
+            duration={300}
+            offset={-80}
+            onClick={handleCloseClick}
+          >
+            About us
+          </Link>
+        </li>
+        <li className="menuList">
+          <Link
+            to="products" 
+            spy={true}
+            smooth={true}
+            duration={300}
+            offset={-80}
+            onClick={handleCloseClick}
+          >
+            Products
+          </Link>
+        </li>
+        <li className="menuList">
+          <Link
+           
+            to="contact" 
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            onClick={handleCloseClick}
+          >
+            Contact us
+          </Link>
+        </li>
       </ul>
       {menuVisible && (
         <div className="close-icon" onClick={handleCloseClick}>
@@ -67,6 +119,5 @@ const NavBar = () => {
       )}
     </nav>
   );
-};
-
+      }
 export default NavBar;

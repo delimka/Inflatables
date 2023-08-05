@@ -5,7 +5,7 @@ import images from "../../constants/sliderData/images";
 
 const About = () => {
   return (
-    <div className="container aboutus__grid-container">
+    <div className="container aboutus__grid-container" name="about">
       <div className="heading-1">
         <h1>About Us</h1>
       </div>
