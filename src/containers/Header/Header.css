@@ -22,7 +22,7 @@
   width: 350px;
   height: 190px;
   margin-top: 430px;
-  color: white;
+  color: rgb(235, 222, 222);
 }
 
 .header__container--mission {
@@ -33,6 +33,9 @@
 .header__check--button {
   margin-top: 400px;
   padding-right: 15%;
+  color: rgb(235, 222, 222);
+  cursor: pointer;
+
 }
 
 

@@ -3,6 +3,8 @@ import './Footer.css';
 import images from '../../constants/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkype, faYoutube, faInstagram, faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-scroll';
+
 
 const Footer = () => {
   return (
@@ -15,8 +17,26 @@ const Footer = () => {
       <div className='links__icon-container'>
 
         <div className="links">
-          <a href="/">Home</a>
-          <a href="/">Work with us </a>
+          <li>
+          <Link
+            to="home" 
+            spy={true}
+            smooth={true}
+            duration={300}
+            offset={-80}           >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="about" 
+            spy={true}
+            smooth={true}
+            duration={300}
+            offset={-80}           >
+            About us
+          </Link>
+        </li>
           <a href="/">Contact us</a>
         </div>
 

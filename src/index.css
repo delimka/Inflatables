@@ -12,6 +12,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  outline: none;
+  scroll-behavior: smooth;
+
   
 }
 
@@ -40,9 +43,6 @@
   margin-bottom: 150px;
 }
 
-*{
-  scroll-behavior: smooth;
-}
 
 
 

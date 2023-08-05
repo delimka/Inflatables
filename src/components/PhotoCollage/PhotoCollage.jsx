@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 import './PhotoCollage.css';
 import Modal from 'react-modal';
@@ -21,6 +21,16 @@ const PhotoCollage = ({ imageFilenames }) => {
     setSelectedPhoto(false);
   };
 
+  useEffect(() => {
+    // Check if the number of images is odd
+    if (imageFilenames.length % 2 !== 0) {
+      const lastItem = document.querySelector('.collage-container .collage-item:last-child');
+      if (lastItem) {
+      lastItem.style.gridColumn = 'span 2';
+      }
+    }
+  }, [imageFilenames]);
+
   return (
     <div className='collage-container'>
       {transitions((style, image, index) => (
@@ -30,7 +40,8 @@ const PhotoCollage = ({ imageFilenames }) => {
           className='collage-item'
           onClick={() => openModal(image)}
         >
-          <img src={image} alt={`photo_${index + 1}`} className='collage-image' />
+          <img src={image} alt={`photo_${index + 1}`} className='collage-image'  loading='lazy'
+/>
         </animated.div>
       ))}
       <Modal

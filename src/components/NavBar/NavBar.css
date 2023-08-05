@@ -1,7 +1,7 @@
 /* NavBar */
 .navbar {
   padding-left: 10%; 
-  padding-right: 15%; 
+  padding-right: 12%; 
   height: 80px;
   background: linear-gradient(#e66465, #9198e5);
   border-radius: 0 0 40px 40px;
@@ -66,6 +66,7 @@
   }
 
   .menu {
+
     display: none; /* Hide the menu items initially */
     position: fixed;
     top: 50%;
@@ -82,7 +83,9 @@
     z-index: 9999;
   }
 
+
   .menu.visible {
+  
     display: flex; /* Shsow the menu items when the menu is visible */
     flex-direction: column;
     align-items: center;
@@ -95,6 +98,7 @@
   }
   .menuList + .menuList {
     margin-left: 0;
+    padding-top: 25px;
   }
 
   .close-icon{
@@ -105,7 +109,11 @@
     cursor: pointer;
 
   }
-
+  .menu-icon.menu-open .bar {
+    height: 0; 
+    opacity: 0; 
+   
+  }
 }
 
 /* Adjust styles for smaller screens */
