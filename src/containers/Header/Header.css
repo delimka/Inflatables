@@ -19,10 +19,11 @@
 
 .p__mission {
   display: block;
-  width: 350px;
+  width: 400px;
   height: 190px;
   margin-top: 430px;
   color: rgb(235, 222, 222);
+  font-size: 24px;
 }
 
 .header__container--mission {
@@ -86,10 +87,11 @@
     .header__check--button {
       margin-top: 30%;
     }
-    .header{
-      min-height: 80vh;
+   
+    .p__mission {
+      padding-top: 50px;
+      font-size: 20px;
     }
-    
   }
 
   @media only screen and (max-width: 720px) {
@@ -104,7 +106,7 @@
     .p__mission {
       width: auto;
       height: auto;
-      padding: 0 8%;
+      padding: 50px 8%;
     }
   }
 
@@ -112,7 +114,7 @@
   @media only screen and (max-width: 541px) {
 
     .header__check--button {
-      margin-top: 50%;
+      margin-top: 70%;
   }
   }
 
@@ -121,7 +123,7 @@
   @media only screen and (max-width: 542px) and (min-width: 539px)  {
 
     .header__check--button{
-      margin-top: 60%;
+      margin-top: 75%;
 
     }
 
@@ -139,26 +141,14 @@
     .header__check--button{
      
       font-size: 14px;
-      margin-bottom: 12%;
-      margin-top: 65%;
+      margin-top: 80%;
     }
   
   }
 
-  @media only screen and (max-width: 470px) and (min-width: 400px)  {
 
-    .header__check--button{
+
  
-      margin-top: 50%;
-    }
-
-  }
-
-  @media only screen and (max-width: 400px) {
-    .header__check--button{
-      margin-bottom: 0;
-    }
-  }
 
   @media only screen and (max-width: 282px) {
 

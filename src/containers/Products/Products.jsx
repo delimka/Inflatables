@@ -26,11 +26,10 @@ const Products = () => {
     setMenuItems(filteredItems);
   }, [selectedSubOption]);
 
-  const Options = ["INFLATABLE PRODUCTS", "TENTS", "OTHER INFLATABLES"];
+  const Options = ["INFLATABLE PRODUCTS", "TENTS"];
   const subOptions = {
     "INFLATABLE PRODUCTS": ["Arches", "Bottles", "Screens", "Balloons", "Mini", "Party"],
     "TENTS": ["Airone", "Marquee", "Pagoda", "Duplex", "Standing"],
-    "OTHER INFLATABLES": ["Arcada", "Bottdasd", "Filmdasd", "Ballodsad", "Mini-Inflds", "Spdasdas"],
   };
 
   const handleOptionClick = (option) => {

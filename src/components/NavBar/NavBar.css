@@ -17,6 +17,7 @@
   font-size: 24px;
   cursor: pointer;
   font-weight: 500;
+  outline: none;
 }
 
 .menuList:hover {
@@ -34,12 +35,16 @@
   width: 200px;
   height: 70px;
 }
+.burgerlogo {
+  display: none;
+}
 
 
 /* New styles for burger menu icon and hidden menu items */
 .menu-icon {
   display: none; /* Initially hide */
   cursor: pointer;
+  outline: none;
 }
 
 .menu-icon .bar {
@@ -63,6 +68,14 @@
 
   .menu-icon {
     display: block; 
+  }
+
+  .burgerlogo {
+    display: block;
+    height: 80px;
+    width: 250px;
+    margin-bottom: 30px;
+
   }
 
   .menu {
