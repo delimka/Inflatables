@@ -60,7 +60,7 @@
 }
 /* creating burger menu */
 
-@media only screen and (max-width: 791px) {
+@media only screen and (max-width: 870px) {
   .navbar {
     padding-left: 10%; 
     padding-right: 15%; 
@@ -130,7 +130,7 @@
 }
 
 /* Adjust styles for smaller screens */
-@media only screen and (min-width: 791px) {
+@media only screen and (min-width: 870px) {
 
   .menu {
     display: flex; 

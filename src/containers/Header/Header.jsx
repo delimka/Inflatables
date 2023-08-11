@@ -6,7 +6,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 
 const Header = () => (
-  <div className="header bg-cover bg-no-repeat bg-center " name="home" style={{ backgroundImage: `url(${images.introBg})`, backgroundSize: 'cover', filter: 'contrast(200%)' }}>
+  <div className="header bg-cover bg-no-repeat bg-center" name="home">
     <div className="dark-overlay"></div>
     <div className="header__container">
       <div className="header__container--mission">

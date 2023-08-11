@@ -19,7 +19,7 @@
     align-items: center;
   }
   
-
+ 
   .rounded-button {
     border: none;
     background-color: #eee;
@@ -28,6 +28,7 @@
     cursor: pointer;
     font-size: 16px;
     border-radius: 30px;
+    outline: none;
   }
   
   .row1__rounded-button.active {
