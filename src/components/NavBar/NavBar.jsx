@@ -4,14 +4,14 @@ import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
+import ContactUsModal from '../ContactUsModal/ContactUsModal';
 
 
 
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [menuVisible, setMenuVisible] = useState(false);
-  
- 
+  const [menuVisible, setMenuVisible] = useState(false); // for navbar menu screen widt
+  const [modalIsOpen, setModalIsOpen] = useState(false); // for contact button
 
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
@@ -22,7 +22,7 @@ const NavBar = () => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
-      if (currentScrollPos > prevScrollPos && currentScrollPos > scrollThresholdDown) {
+      if (currentScrollPos > prevScrollPos && currentScrollPos > scrollThresholdDown ) {
         navbar.classList.add('hidden');
       } else if (currentScrollPos > scrollThresholdProductsMin && currentScrollPos < scrollThresholdProductsMax) {
         navbar.classList.add('hidden');
@@ -41,23 +41,56 @@ const NavBar = () => {
   }, [prevScrollPos]);
 
   const handleBurgerClick = () => {
-    setMenuVisible((prev) => !prev);
+    setMenuVisible(true);
   };
 
   const handleCloseClick = () => {
     setMenuVisible(false);
   };
 
+  useEffect(() => {
+    if (modalIsOpen || menuVisible) {
+      document.body.classList.add('modal-open');
+      
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [modalIsOpen, menuVisible]);
+  
+
+  const openModal = () => {
+    setModalIsOpen(true);
+    setMenuVisible(false); // Hide the menu when modal is open
+
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+
+
   return (
-    <nav className={`navbar fixed top-0 w-full flex justify-between items-center z-10`}>
+    <nav className= {`navbar  ${modalIsOpen ? 'hidden' : ''} fixed top-0 w-full flex justify-between items-center z-10`}>
       <div>
         <img src={images.logo} alt="Logo" className="logo" />
       </div>
-      <div className="menu-icon" onClick={handleBurgerClick}>
+      <Link
+          to="contact-us-form"
+           className="menu-icon"
+           spy={true}
+           smooth={true}
+           duration={300}
+           offset={-80}
+           onClick={() => {
+            handleBurgerClick();
+           }}
+         >
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
         <div className={`bar ${menuVisible ? 'active' : ''}`}></div>
-      </div>
+         </Link>
+    
       <ul className={`menu ${menuVisible ? 'visible' : ''} list-none`}>
 
         {/* smooth navigation */}
@@ -70,8 +103,10 @@ const NavBar = () => {
             smooth={true}
             duration={300}
             offset={-80} 
-            onClick={handleCloseClick}
-          >
+            onClick={() => {
+              handleCloseClick();
+              closeModal();
+            }}          >
             Home
           </Link>
         </li>
@@ -83,7 +118,10 @@ const NavBar = () => {
             smooth={true}
             duration={300}
             offset={-80}
-            onClick={handleCloseClick}
+            onClick={() => {
+              handleCloseClick();
+              closeModal();
+            }}
           >
             About us
           </Link>
@@ -95,7 +133,10 @@ const NavBar = () => {
             smooth={true}
             duration={300}
             offset={-80}
-            onClick={handleCloseClick}
+            onClick={() => {
+              handleCloseClick();
+              closeModal();
+            }}
           >
             Products
           </Link>
@@ -108,11 +149,15 @@ const NavBar = () => {
             smooth={true}
             duration={300}
             offset={-80}
-            onClick={handleCloseClick}
+            onClick={() => {
+              handleCloseClick();
+              openModal();
+            }}
           >
             Contact us
           </Link>
-        </li>
+          <ContactUsModal isOpen={modalIsOpen} onRequestClose={closeModal} />       
+           </li>
        
       </ul>
       {menuVisible && (

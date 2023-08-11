@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 const images = {
   introBg,
   logo,
+  
 
 };
 

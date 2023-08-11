@@ -1,0 +1,380 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.46);
+  z-index: 15;
+}
+
+/* .contact-us-modal {
+  position: absolute;
+  background-image: url(/src/assets/introBg.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  padding: 5%;
+  background-color: white;
+  border-radius: 8px;
+  height: 92%;
+  width: 88%;
+  z-index: 9999;
+  border: 4px solid black;
+  box-shadow: 0px 0px 12px 12px rgba(0, 0, 0, 0.3);
+
+}    */
+
+body {
+  background: #fcfbff;
+}
+p {
+  font-size: 14px;
+}
+.section-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.m-b-10 {
+  margin-bottom: 7px;
+}
+.m-r-5 {
+  margin-right: 5px;
+}
+.m-t-5 {
+  margin-top: 5px;
+}
+
+.contact-form {
+  background: #fff;
+  box-shadow: 0 23px 73px -17px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  width: 85%;
+  position: absolute;
+  border-radius: 15px;
+}
+@media (min-width: 993px) {
+  .contact-form {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: 993px) {
+  .contact-form-box__left {
+    height: 80%;
+    justify-content: space-between;
+    box-shadow: 10px 10px 15px #aaaaaa;
+  }
+  .contact-icons{
+    margin-top: 65%;
+  
+  }
+  hr{
+    padding-bottom: 20px
+  }
+  
+.contact-form-box__left > div {
+  margin-bottom: 20px;
+}
+}
+
+
+.contact-form-box__left {
+  background: linear-gradient(to top, #e66465, #9198e5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 10px 10px 15px 25px;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.contact-form-box__left p {
+  user-select: text;
+}
+
+.logo-container_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+.icons_heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 2%;
+}
+
+
+.contact-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.3rem;
+ 
+}
+
+.icon-link {
+  margin-right: 20px;
+}
+
+.btn__contact-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn__contactus,
+.btn__cancel {
+  border: none;
+  background-color: #eee;
+  color: white;
+  border: 3px solid var(--monochrome-black, #212121);
+  padding: 5px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+  outline: none;
+}
+.btn__contactus {
+  background: #4363d6;
+}
+
+.btn__cancel {
+  background-color: #f32f2f;
+}
+.btn__contactus:hover {
+  transition: background-color 0.5s ease;
+  background: #6c8af9;
+  box-shadow: 0px 8px 16px 0px rgba(26, 66, 228, 0.25);
+}
+.btn__cancel:hover {
+  transition: background-color 0.5s ease;
+  background: #f56363;
+  box-shadow: 0px 8px 16px 0px rgba(250, 79, 76, 0.25);
+}
+@media (min-width: 993px) {
+  .contact-form-box__left {
+    width: 350px;
+    transform: scale(1.05);
+  
+  }
+}
+
+
+.close-button-contact {
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f32f2f; 
+  border: #ffffff 2px solid;
+  color: #ffffff;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+.logo-container_contact {
+  padding-bottom: 10px;
+}
+.contact-form-box__right {
+  padding: 30px;
+  width: 100%;
+}
+@media (min-width: 993px) {
+  .contact-form-box__right {
+    padding: 60px;
+    width: calc(100% - 350px);
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-form.field-clicked .contact-form-box__left {
+    display: none;
+  }
+  .contact-form.field-clicked .contact-form-box__right {
+    width: 100%;
+  }
+  .contact-form.field-clicked {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 5px;
+  }
+  .contact-icons a {
+    padding-right: 15px;
+  }
+
+  .btn__contactus,
+  .btn__cancel {
+    padding: 5px 20px;
+  }
+
+  .logo-container_contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;}
+}
+
+/* Making the label break the flow */
+.floating-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  z-index: 1500;
+}
+/* Hide the browser-specific focus styles */
+.floating-label-field {
+  color: rgba(44, 62, 80, 0.75);
+  border-width: 0;
+  z-index: 2000;
+}
+.floating-label-field:focus {
+  outline: 0;
+  box-shadow: 0;
+}
+.floating-label-field::placeholder {
+  color: rgba(44, 62, 80, 0.5);
+}
+/* Make the label and field look identical on every browser */
+.floating-label,
+.floating-label-field {
+  font: inherit;
+  line-height: 1;
+  display: block;
+  width: 100%;
+}
+.floating-label-field,
+.floating-label-wrap {
+  position: relative;
+}
+/* Input Style #1 */
+.floating-label-field--s1 {
+  transition: border-color 0.25s ease-in-out;
+  color: rgb(71 71 71);
+  border-bottom: 1px solid rgb(75 101 238);
+  background-color: transparent;
+}
+.floating-label-field--s1 + .floating-label {
+  transition: transform 0.25s, opacity 0.25s ease-in-out;
+  transform-origin: 0 0;
+  opacity: 0.5;
+}
+.floating-label-field--s1:focus,
+.floating-label-field--s1:not(:placeholder-shown) {
+  border-color: rgb(75 101 238);
+}
+.floating-label-field--s1:focus + .floating-label,
+.floating-label-field--s1:not(:placeholder-shown) + .floating-label {
+  transform: translate(0.25em, -30%) scale(0.8);
+  opacity: 0.25;
+}
+.floating-label-field--s1:valid:not(:placeholder-shown) {
+  border-color: rgb(39 131 77 / 85%);
+}
+.floating-label-field--s1:invalid {
+  border-color: rgb(199 9 36 / 85%);
+}
+/* Input Style #2 */
+.floating-label-field--s2 {
+  transition: background-color 0.25s ease-in-out;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.floating-label-field--s2 + .floating-label {
+  visibility: hidden;
+  transition: transform 0.25s, visibility 0.5s, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.floating-label-field--s2:focus + .floating-label,
+.floating-label-field--s2:not(:placeholder-shown) + .floating-label {
+  visibility: visible;
+  transform: translateY(-80%);
+  opacity: 0.5;
+}
+.floating-label-field--s2:valid:not(:placeholder-shown) {
+  border-color: #adefc8;
+  background-color: #adefc8;
+}
+.floating-label-field--s2:invalid {
+  border-color: #ffe0e3;
+  background-color: #ffe0e3;
+}
+.floating-label-field--s3 {
+  padding: 1.5em;
+  transition: border-color 0.25s ease-in-out;
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  background-color: transparent;
+}
+.floating-label-field--s3 + .floating-label {
+  position: absolute;
+  top: 0.75em;
+  left: 0.75em;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0.75em;
+  transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
+  transform-origin: 0 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.floating-label-field--s3:focus,
+.floating-label-field--s3:not(:placeholder-shown) {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.floating-label-field--s3:focus + .floating-label,
+.floating-label-field--s3:not(:placeholder-shown) + .floating-label {
+  z-index: 2500;
+  padding: 0.75em;
+  transform: translate(0, -2em) scale(0.9);
+  color: rgba(255, 255, 255, 0.25);
+  background-color: #2c3e50;
+}
+/* Common Styles */
+/* Identical inputs on all browsers */
+.floating-label-field--s1:not(textarea),
+.floating-label-field--s2:not(textarea),
+.floating-label-field--s3:not(textarea) {
+  max-height: 5em;
+}
+.floating-label-field--s1,
+.floating-label-field--s1 + .floating-label,
+.floating-label-field--s2,
+.floating-label-field--s2 + .floating-label {
+  padding: 15px 0 5px 0;
+}
+.floating-label-field--s1 + .floating-label,
+.floating-label-field--s2 + .floating-label {
+  z-index: 1500;
+}
+.floating-label-field--s1::placeholder,
+.floating-label-field--s3::placeholder {
+  color: transparent;
+}

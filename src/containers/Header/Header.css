@@ -1,5 +1,8 @@
 .header {
-  min-height: calc(100vh);}
+  min-height: calc(100vh);
+  background-image: url(/src/assets/introBg.png);
+  background-size: cover;
+  filter: contrast(200%);}
 
 .header__container {
   display: flex;
@@ -29,6 +32,7 @@
 .header__container--mission {
   flex-grow: 1;
   margin-left: 10%;
+  
 }
 
 .header__check--button {
@@ -36,7 +40,7 @@
   padding-right: 15%;
   color: rgb(235, 222, 222);
   cursor: pointer;
-
+  outline: none;
 }
 
 
@@ -93,6 +97,8 @@
       font-size: 20px;
     }
   }
+  
+
 
   @media only screen and (max-width: 720px) {
     .header__check--button {
