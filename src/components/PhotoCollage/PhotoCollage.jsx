@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useTransition, animated } from '@react-spring/web';
 import './PhotoCollage.css';
 import Modal from 'react-modal';
+import ImageSlider from '../ImageSlider/ImageSlider';
 
 const PhotoCollage = ({ imageFilenames }) => {
   const [selectedPhoto, setSelectedPhoto] = useState(false);
-
-  const transitions = useTransition(imageFilenames, {
-    from: { opacity: 0.5, transform: 'scale(0)' },
-    enter: { opacity: 1, transform: 'scale(1)' },
-    leave: { opacity: 0, transform: 'scale(0)' },
-    config: { duration: 150 },
-  });
 
   const openModal = (photo) => {
     setSelectedPhoto(photo);
@@ -22,36 +15,33 @@ const PhotoCollage = ({ imageFilenames }) => {
   };
 
   useEffect(() => {
-    // Check if the number of images is odd
-    if (imageFilenames.length % 2 !== 0) {
-      const lastItem = document.querySelector('.collage-container .collage-item:last-child');
-      if (lastItem) {
-      lastItem.style.gridColumn = 'span 2';
+    const lastItem = document.querySelector('.collage-container .collage-item:last-child');
+
+    if (lastItem) {
+      // Check if the number of images is odd
+      if (imageFilenames.length % 2 !== 0) {
+        lastItem.classList.add('last-child-odd');
+      } else {
+        lastItem.classList.remove('last-child-odd');
       }
     }
   }, [imageFilenames]);
 
   return (
     <div className='collage-container'>
-      {transitions((style, image, index) => (
-        <animated.div
-          key={index}
-          style={style}
-          className='collage-item'
-          onClick={() => openModal(image)}
-        >
-          <img src={image} alt={`photo_${index + 1}`} className='collage-image'  loading='lazy'
-/>
-        </animated.div>
+      {imageFilenames.map((image, index) => (
+        <div key={index} className='collage-item' onClick={() => openModal(image)}>
+          <img src={image} alt={`photo_${index + 1}`} className='collage-image' loading='lazy' />
+        </div>
       ))}
       <Modal
-        isOpen={!!selectedPhoto} 
+        isOpen={!!selectedPhoto}
         onRequestClose={closeModal}
         className='modal'
         overlayClassName='modal-overlay'
       >
         {selectedPhoto && (
-          <img src={selectedPhoto} alt='selected_photo' className='selected-photo' />
+          <ImageSlider images={imageFilenames} alt='selected_photo' className='selected-photo' />
         )}
         <button className='close-button' onClick={closeModal}>
           &#x2715;

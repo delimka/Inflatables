@@ -16,8 +16,8 @@
 }
 
 .container {
-  padding-left: 6%;
-  padding-right: 7%;
+  padding-left: 8%;
+  padding-right: 0%;
   padding-bottom: 110px;
 }
 
@@ -67,6 +67,7 @@
 
   .container {
     padding-bottom: 70px;
+    padding-right: 7%;
   }
   .heading-1 {
     padding-bottom: 25px;
@@ -86,5 +87,7 @@
 
   .container {
     padding-bottom: 70px;
+    
+
   }
 }

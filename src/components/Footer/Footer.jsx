@@ -92,7 +92,7 @@ const Footer = () => {
 
       <div className="copyright">
         <a href="https://www.github.com/delimka" target="_blank" rel="noopener noreferrer">
-          © {new Date().getFullYear()} Dpinflatables. All rights reserved. Designed and created by delimka.
+          © {new Date().getFullYear()} Dpinflatables. All rights reserved. Created by delimka.
         </a>
       </div>
     </footer>
