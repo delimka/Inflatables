@@ -31,9 +31,7 @@
 body {
   background: #fcfbff;
 }
-p {
-  font-size: 14px;
-}
+
 .section-100 {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -74,7 +72,7 @@ p {
     box-shadow: 10px 10px 15px #aaaaaa;
   }
   .contact-icons{
-    margin-top: 65%;
+    margin-top: 55%;
   
   }
   hr{

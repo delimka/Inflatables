@@ -3,9 +3,10 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 5px;
-  
+
 
 }
+
 
 .collage-item {
   flex: 1 0 calc(25% - 10px);
@@ -52,7 +53,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 30px;
   position: relative;
 }
 
@@ -80,6 +81,7 @@
   background-color: rgba(255, 255, 255, 0.8); 
 }
 
+
 /* For screens with a maximum width of 490 pixels */
 @media only screen and (max-width: 490px) {
   .collage-container {
@@ -87,6 +89,13 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3px;
     padding: 0;
+  }
+  .collage-container .collage-item {
+    grid-column: auto;
+  }
+  
+  .collage-container .collage-item.last-child-odd {
+    grid-column: 2 span;
   }
 
   .collage-item {

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import images from "../../constants/collageData/images";
 import ContactUsModal from '../../components/ContactUsModal/ContactUsModal';
-import { Link } from 'react-scroll';
 
 const Products = () => {
   const [selectedOption, setSelectedOption] = useState(() => {
@@ -190,6 +189,7 @@ const Products = () => {
       <div className="image-list">
         {images[selectedSubOption.toLowerCase()] ? (
           <PhotoCollage
+            key={selectedSubOption} 
             imageFilenames={images[selectedSubOption.toLowerCase()]}
           />
         ) : (
