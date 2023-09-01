@@ -1,72 +1,98 @@
 .slider {
-
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
+}
+.image {
+ 
+  width: 2000px;
+  height: 450px;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 7px 12px 0.7rem #888888;
+}
+
+.right-click-area,
+.left-click-area
+{
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%; 
+  cursor: pointer;
+  z-index: 2; 
+  background: transparent; 
 
 }
-  .image {
 
-    width: 100%;
-    height: 50%;
-    border-radius: 30px;
-    object-fit: cover;
-    
-    box-shadow: 7px 12px 0.7rem #888888; /* Box shadow with blur effect */
+.left-click-area {
+  left: 0;
+}
 
-    
-  }
-  
+.right-click-area {
+  right: 0;
+}
+
+
+.right-arrow,
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  color: #ffff;
+  z-index: 9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 40px;
+}
+
+.right-arrow {
+  right: 40px;
+}
+.slide {
+  opacity: 0;
+
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 767.9px) {
   .right-arrow,
   .left-arrow {
-    position: absolute;
-    top: 50%;
-    right: 32px;
-    font-size: 3rem;
-    transform: translateY(-50%);
-    color: #ffff;
-    z-index: 9;
-    cursor: pointer;
-    user-select: none;
+    font-size: 2.5rem;
   }
-  
+}
+
+@media only screen and (max-width: 650px) {
+  .right-arrow,
   .left-arrow {
-    left: 40px;
+    font-size: 2rem;
   }
-  
-  .right-arrow {
-    right: 40px;
+  .image{
+    height: 350px;
   }
-  .slide {
-    opacity: 0;
-    
-    transition-duration: 1s ease;
-  }
-  
-  .slide.active {
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.0);
-  }
+}
 
-  @media only screen and (max-width: 767.9px) {
-    .right-arrow,
-    .left-arrow {
-      font-size: 2.5rem;
-    }
+@media only screen and (max-width: 470px) {
+  .right-arrow,
+  .left-arrow {
+    font-size: 1.5rem;
   }
-
-  @media only screen and (max-width: 650px) {
-    .right-arrow,
-    .left-arrow {
-      font-size: 2rem;
-    }
+  .image{
+    height: 300px;
   }
-
-  @media only screen and (max-width: 470px) {
-    .right-arrow,
-    .left-arrow {
-      font-size: 1.5rem;
-    }
-  }
+}

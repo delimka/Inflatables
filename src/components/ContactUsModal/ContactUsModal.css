@@ -8,26 +8,6 @@
   z-index: 15;
 }
 
-/* .contact-us-modal {
-  position: absolute;
-  background-image: url(/src/assets/introBg.png);
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -45%);
-  padding: 5%;
-  background-color: white;
-  border-radius: 8px;
-  height: 92%;
-  width: 88%;
-  z-index: 9999;
-  border: 4px solid black;
-  box-shadow: 0px 0px 12px 12px rgba(0, 0, 0, 0.3);
-
-}    */
-
 body {
   background: #fcfbff;
 }
@@ -59,31 +39,34 @@ body {
   position: absolute;
   border-radius: 15px;
 }
-@media (min-width: 993px) {
-  .contact-form {
-    flex-wrap: nowrap;
-  }
-}
 
 @media (min-width: 993px) {
   .contact-form-box__left {
     height: 80%;
     justify-content: space-between;
     box-shadow: 10px 10px 15px #aaaaaa;
+    width: 350px;
+    transform: scale(1.05);
   }
-  .contact-icons{
-    margin-top: 55%;
-  
-  }
-  hr{
-    padding-bottom: 20px
-  }
-  
-.contact-form-box__left > div {
-  margin-bottom: 20px;
-}
-}
 
+  .contact-form {
+    flex-wrap: nowrap;
+  }
+
+  hr {
+    padding-bottom: 20px;
+  }
+
+  .contact-form-box__left > div {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 993px) {
+  .contact-form-box__left {
+    width: 350px;
+    transform: scale(1.05);
+  }
+}
 
 .contact-form-box__left {
   background: linear-gradient(to top, #e66465, #9198e5);
@@ -113,25 +96,26 @@ body {
   margin-right: 2%;
 }
 
-
 .contact-icons {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
   font-size: 1.3rem;
- 
+  padding-top: 5%;
 }
 
 .icon-link {
   margin-right: 20px;
 }
+/*Buttons cancel and submit*/
 
-.btn__contact-container {
+.btns__contact-container {
   display: flex;
   gap: 40px;
   justify-content: center;
   margin-top: 20px;
 }
-.btn__contactus,
+.btn__submit,
 .btn__cancel {
   border: none;
   background-color: #eee;
@@ -143,14 +127,14 @@ body {
   border-radius: 30px;
   outline: none;
 }
-.btn__contactus {
+.btn__submit {
   background: #4363d6;
 }
 
 .btn__cancel {
   background-color: #f32f2f;
 }
-.btn__contactus:hover {
+.btn__submit:hover {
   transition: background-color 0.5s ease;
   background: #6c8af9;
   box-shadow: 0px 8px 16px 0px rgba(26, 66, 228, 0.25);
@@ -160,20 +144,18 @@ body {
   background: #f56363;
   box-shadow: 0px 8px 16px 0px rgba(250, 79, 76, 0.25);
 }
-@media (min-width: 993px) {
-  .contact-form-box__left {
-    width: 350px;
-    transform: scale(1.05);
-  
+
+@media (height > 840px) {
+  .btns__contact-container {
+    padding-top: 25%;
   }
 }
-
 
 .close-button-contact {
   font-size: 20px;
   cursor: pointer;
   border: none;
-  background-color: #f32f2f; 
+  background-color: #f32f2f;
   border: #ffffff 2px solid;
   color: #ffffff;
   padding: 0;
@@ -188,7 +170,6 @@ body {
   right: 20px;
 }
 
-
 .logo-container_contact {
   padding-bottom: 10px;
 }
@@ -196,6 +177,7 @@ body {
   padding: 30px;
   width: 100%;
 }
+
 @media (min-width: 993px) {
   .contact-form-box__right {
     padding: 60px;
@@ -226,7 +208,7 @@ body {
     padding-right: 15px;
   }
 
-  .btn__contactus,
+  .btn__submit,
   .btn__cancel {
     padding: 5px 20px;
   }
@@ -234,7 +216,8 @@ body {
   .logo-container_contact {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;}
+    align-items: flex-start;
+  }
 }
 
 /* Making the label break the flow */

@@ -4,7 +4,7 @@ import images from '../../constants/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkype, faYoutube, faInstagram, faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-scroll';
-import ContactUsModal from '../ContactUsModal/ContactUsModal';
+import ContactUsModal from '../../components/ContactUsModal/ContactUsModal';
 
 
 

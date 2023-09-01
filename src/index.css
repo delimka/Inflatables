@@ -4,26 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typography and Base Styles */
 :root {
   font-family: "Roboto", sans-serif;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent; /* For iOS Safari */
+  tap-highlight-color: transparent; /* For modern browsers */
   scroll-behavior: smooth;
 }
 
+/* Container Styles */
 .container {
-  padding-left: 8%;
-  padding-right: 0%;
+  padding-left: 5%;
+  padding-right: 7%;
   padding-bottom: 110px;
+  min-width: 100%;
 }
 
+/* Headings Styles */
 .heading-1 {
   font-size: 48px;
   font-weight: 500;
+  padding-bottom: 20px;
 }
 
 .heading-2 {
@@ -31,12 +34,12 @@
   font-weight: 500;
 }
 
+/* Header Styles */
 .header {
   margin-bottom: 150px;
 }
 
-/*  */
-
+/* Modal Styles */
 .modal-open {
   overflow: hidden;
 }
@@ -45,18 +48,10 @@
   display: block;
 }
 
-
-@media only screen and (max-width: 1000px) and (min-width: 900px) {
-  .container {
-    padding-left: 7%;
-    padding-right: 3%;
-  }
-}
-
+/* Responsive Breakpoints */
 @media only screen and (max-width: 768px) {
   .heading-1 {
     font-size: 36px;
-    font-weight: 500;
   }
 }
 
@@ -67,11 +62,12 @@
 
   .container {
     padding-bottom: 70px;
-    padding-right: 7%;
   }
+
   .heading-1 {
     padding-bottom: 25px;
   }
+
   p {
     font-size: 16px;
   }
@@ -79,15 +75,10 @@
 
 @media only screen and (max-width: 470px) {
   p {
-    font-size: 14px;
+    font-size: 15px;
   }
+
   .heading-1 {
     font-size: 26px;
-  }
-
-  .container {
-    padding-bottom: 70px;
-    
-
   }
 }
