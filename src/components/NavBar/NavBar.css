@@ -1,15 +1,21 @@
 /* NavBar */
 .navbar {
-  padding-left: 10%; 
-  padding-right: 12%; 
+  padding: 0 10% 0 12%;
   height: 80px;
   background: linear-gradient(#e66465, #9198e5);
   border-radius: 0 0 40px 40px;
-  transition: background-color 0.3s ease, opacity 0.3s ease; 
-  
-  
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/*Animation for nav*/
+.slide-up {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
 
 /* MenuList items edit */
 .menuList {
@@ -21,7 +27,6 @@
 }
 
 .menuList:hover {
-  color: white;
   text-decoration: underline;
 }
 
@@ -35,14 +40,14 @@
   width: 200px;
   height: 70px;
 }
+
 .burgerlogo {
   display: none;
 }
 
-
 /* New styles for burger menu icon and hidden menu items */
 .menu-icon {
-  display: none; /* Initially hide */
+  display: none;
   cursor: pointer;
   outline: none;
 }
@@ -56,31 +61,31 @@
 }
 
 .menu.visible .bar {
-  background-color: #fff; 
+  background-color: #fff;
 }
-/* creating burger menu */
+
+/* For smaller screens */
 
 @media only screen and (max-width: 870px) {
   .navbar {
-    padding-left: 10%; 
-    padding-right: 15%; 
+    padding: 0 10% 0 15%;
   }
 
   .menu-icon {
-    display: block; 
+    display: block;
   }
+
+  /* Burger menu */
 
   .burgerlogo {
     display: block;
     height: 80px;
     width: 250px;
     margin-bottom: 30px;
-
   }
 
   .menu {
-
-    display: none; /* Hide the menu items initially */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -96,10 +101,8 @@
     z-index: 9999;
   }
 
-
   .menu.visible {
-  
-    display: flex; /* Shsow the menu items when the menu is visible */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -107,64 +110,53 @@
 
   .menuList {
     padding: 15px;
-    font-size: 35px; 
+    font-size: 35px;
   }
   .menuList + .menuList {
     margin-left: 0;
     padding-top: 25px;
   }
 
-  .close-icon{
-    color: rgb(255, 255, 255);
+  .close-icon {
+    color: #fff;
     z-index: 10000;
     font-size: 50px;
     padding-top: 15px;
     cursor: pointer;
-
   }
   .menu-icon.menu-open .bar {
-    height: 0; 
-    opacity: 0; 
-   
+    height: 0;
+    opacity: 0;
   }
 }
 
-/* Adjust styles for smaller screens */
 @media only screen and (min-width: 870px) {
-
   .menu {
-    display: flex; 
+    display: flex;
   }
 }
-
 
 @media only screen and (max-width: 1280px) {
   .navbar {
-    padding-left: 8%; 
-    padding-right: 12%; 
+    padding: 0 8% 0 12%;
   }
 }
 
 @media only screen and (max-width: 1180px) {
   .navbar {
-    padding-left: 6%; 
-    padding-right: 10%; 
+    padding: 0 6% 0 10%;
   }
 }
 
 @media only screen and (max-width: 1040px) {
-  
   .menuList {
-  
     font-size: 20px;
   }
-  .logo{
+  .logo {
     width: 180px;
     height: 60px;
   }
   .navbar {
-
-    height: 70px;}
-  
+    height: 70px;
+  }
 }
-

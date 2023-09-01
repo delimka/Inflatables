@@ -1,31 +1,32 @@
+/* Footer */
 .footer {
   display: grid;
   grid-template-rows: auto auto 1px auto;
   gap: 10px;
   background-color: #ffff;
   align-items: center;
+  
 }
 
+/* Logo Container */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   background: linear-gradient(#e66465, #9198e5);
   border-radius: 0 0 50% 50%;
 }
 
+/* Links and Icons Container */
 .links__icon-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-  align-items: flex-end; 
-  padding-left: 2%;
-  padding-right: 2%;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 2%;
 }
 
-
+/* Links */
 .links {
   display: flex;
   gap: 20px;
@@ -34,6 +35,7 @@
   font-size: 20px;
   cursor: pointer;
   list-style: none;
+  outline: none;
 }
 
 .links > :not(:first-child) {
@@ -45,11 +47,13 @@
   color: #333;
 }
 
+/* Social Media Icons */
 .social-media-icons {
   display: flex;
   gap: 25px;
 }
 
+/* Divider */
 .divider {
   width: 100%;
   height: 1px;
@@ -57,44 +61,39 @@
   padding-left: 2%;
 }
 
+/* Copyright */
 .copyright {
   margin-left: auto;
-  padding-right: 2%;
+  padding: 0 2%;
   font-size: 16px;
 }
 
+/* Media Queries */
 @media only screen and (max-width: 870px) {
-
   .links {
     gap: 10px;
     font-size: 16px;
   }
 
   .social-media-icons {
-    gap: 15px; 
+    gap: 15px;
   }
 
   .social-media-icons a {
-    font-size: 0.7rem; 
+    font-size: 0.7rem;
   }
 
-  
   .copyright {
     font-size: 14px;
   }
 }
 
-
-
 @media only screen and (max-width: 570px) {
-  
-
   .social-media-icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
-    
   }
 
   .social-media-icons a {
@@ -102,35 +101,29 @@
   }
 
   .links {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   .links__icon-container {
     align-items: center;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding: 0 7%;
   }
 }
 
 @media only screen and (max-width: 530px) {
-
-  
   .links {
     flex-direction: column;
     gap: 10px;
-    align-items: flex-start; 
- 
+    align-items: flex-start;
   }
 
   .links > :not(:first-child) {
     margin-left: 0;
   }
 
-  .copyright{
-
+  .copyright {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 0 2%;
   }
 }

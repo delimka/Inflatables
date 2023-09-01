@@ -14,12 +14,14 @@ const PhotoCollage = ({ imageFilenames }) => {
     setSelectedPhoto(false);
   };
 
+
+
   useEffect(() => {
     const lastItem = document.querySelector('.collage-container .collage-item:last-child');
 
     if (lastItem) {
       // Check if the number of images is odd
-      if (imageFilenames.length % 2 !== 0) {
+      if (imageFilenames.length % 2 !== 0 ) {
         lastItem.classList.add('last-child-odd');
       } else {
         lastItem.classList.remove('last-child-odd');

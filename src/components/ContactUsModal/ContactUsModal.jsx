@@ -10,6 +10,7 @@ import {
   faPhone,
   faMapMarker
 } from '@fortawesome/free-solid-svg-icons'; 
+
 const ContactUsModal = ({ isOpen, onRequestClose }) => {
   const isMobile = useMediaQuery({ maxWidth: 993 });
 
@@ -57,18 +58,16 @@ const ContactUsModal = ({ isOpen, onRequestClose }) => {
           </div>
           <div>
           <FontAwesomeIcon icon={faMapMarker} className="contact-icon" />
-            {/* <small className="light-grey">
-              <i className="fas fa-map-marker m-r-5"></i> Address
-            </small> */}
+        
             <p>
             <a href="https://goo.gl/maps/532cSrcrR1hQUtYR6"target="_blank"> C/ de Pere IV, 51, 08018 Barcelona, Spain</a>
             </p>
           </div>
           {!isMobile && (
             <div className="contact-icons">
-              <a className='icon-link' target="_blank" href="https://www.skype.com/"><FontAwesomeIcon icon={faSkype}  size= '2x' color="#0078D4" /></a>
-              <a className='icon-link' href="https://www.instagram.com/dailydevelopmentdpgroup/" target="_blank"><FontAwesomeIcon icon={faInstagram} size= '2x'  color="#E4405F"/></a>
-                <a className='icon-link'href="https://www.linkedin.com/company/dpointgroup/" target="_blank"><FontAwesomeIcon icon={faLinkedin} size= '2x'  color="#0A66C2"/></a>
+              <a className='icon-link' target="_blank" href="https://www.skype.com/"><FontAwesomeIcon icon={faSkype}  size= '2x' color="white" /></a>
+              <a className='icon-link' href="https://www.instagram.com/dailydevelopmentdpgroup/" target="_blank"><FontAwesomeIcon icon={faInstagram} size= '2x'  color="white"/></a>
+                <a className='icon-link'href="https://www.linkedin.com/company/dpointgroup/" target="_blank"><FontAwesomeIcon icon={faLinkedin} size= '2x'  color="white"/></a>
             </div>
           )}
         </div>
@@ -146,9 +145,9 @@ const ContactUsModal = ({ isOpen, onRequestClose }) => {
                 </div>
               </div>
             </div>
-            <div className='btn__contact-container'>
+            <div className='btns__contact-container'>
             <button
-              className="btn__contactus"
+              className="btn__submit"
             >
               Submit
             </button>
