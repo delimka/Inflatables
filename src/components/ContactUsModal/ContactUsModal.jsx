@@ -5,6 +5,7 @@ import './ContactUsModal.css';
 import images from '../../constants/images'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faSkype, faInstagram,  faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { motion, AnimatePresence } from "framer-motion";
 import {
   faEnvelope,
   faPhone,
@@ -14,16 +15,40 @@ import {
 const ContactUsModal = ({ isOpen, onRequestClose }) => {
   const isMobile = useMediaQuery({ maxWidth: 993 });
 
-  
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  };
+
+  const modalExitVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  };
+
   return (
-    <Modal
-      name="contact-us-form"
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      contentLabel="Contact Us Modal"
-      className="contact-us-modal"
-      overlayClassName="overlay"
-    >
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={modalVariants}
+        >
+          <Modal
+            name="contact-us-form"
+            isOpen={isOpen}
+            onRequestClose={onRequestClose}
+            contentLabel="Contact Us Modal"
+            className="contact-us-modal"
+            overlayClassName="overlay"
+          >
+            <motion.div
+              className="modal-overlay"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={modalVariants} 
+            >
       <div className="contact-form">
         <div className="contact-form-box__left">
           <div className='logo-container_contact'>
@@ -164,7 +189,11 @@ const ContactUsModal = ({ isOpen, onRequestClose }) => {
           &#x2715;
         </button>
       </div>
-    </Modal>
+      </motion.div>
+          </Modal>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

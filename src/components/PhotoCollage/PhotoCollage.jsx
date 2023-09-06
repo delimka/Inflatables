@@ -43,7 +43,15 @@ const PhotoCollage = ({ imageFilenames }) => {
         overlayClassName='modal-overlay'
       >
         {selectedPhoto && (
-          <ImageSlider images={imageFilenames} alt='selected_photo' className='selected-photo' />
+          <ImageSlider 
+          images={imageFilenames} 
+          alt='selected_photo' 
+          className='selected-photo'    
+          customStyle=
+          {{  
+          width: '500px',
+          height: '250px' }}
+          />
         )}
         <button className='close-button' onClick={closeModal}>
           &#x2715;

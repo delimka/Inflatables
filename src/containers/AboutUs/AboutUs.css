@@ -14,6 +14,8 @@
 .p__aboutus {
   grid-area: p;
   padding-top: 20px;
+  text-align: justify;
+
 }
 
 .photo-slider {
