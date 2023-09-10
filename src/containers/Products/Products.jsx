@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import images from "../../constants/collageData/images";
 import ContactUsModal from "../../components/ContactUsModal/ContactUsModal";
+import { useScrollAnimation} from "../../components/customHooks/useScrollAnimation";
+import { motion } from "framer-motion";
+
 
 const Products = () => {
 
@@ -54,7 +57,7 @@ const Products = () => {
       localStorage.setItem("selectedSubOption", option);
 
       setFadeOut(false);
-    }, 150);
+    }, 250);
     return () => clearTimeout(timeout);
   };
 
@@ -133,13 +136,28 @@ const Products = () => {
     setModalIsOpen(false);
   };
 
-  return (
-    <div className="container products__container" name="products">
-      <div className="heading-1">
-        <h1>Check our Products</h1>
-      </div>
+  // animation
+  const containerRef = useRef(null);
+  const controls = useScrollAnimation(containerRef);
 
-      <div className="row-tabs1">
+  return (
+    <div className="container products__container" name="products" ref={containerRef}>
+      <motion.div
+              className="heading-1"
+              initial={{ opacity: 0, y: 50}}
+              animate={controls}
+              transition={{ duration: 0.5 }}
+            >
+          <h1>Check Our Products</h1>
+      </motion.div>
+
+      <motion.div
+              initial={{ opacity: 0, y: -50}}
+              animate={controls}
+              transition={{ duration: 0.5 }}
+            >
+
+      <div className="row-tabs1"   >
         {Options.map((option) => (
           <button
             key={option}
@@ -155,7 +173,7 @@ const Products = () => {
 
       <div className="space"> </div>
 
-      <div className="row-tabs2" ref={row2Ref}>
+      <div className="row-tabs2" ref={row2Ref} >
         {subOptions[selectedOption].map((option) => (
           <button
             key={option}
@@ -168,7 +186,15 @@ const Products = () => {
           </button>
         ))}
       </div>
-      <div className={`container-fade ${fadeOut ? "fade-out" : "fade-in"}`}>
+      </motion.div>
+
+      
+      <motion.div
+              initial={{ opacity: 0, y: 100}}
+              animate={controls}
+              transition={{ duration: 0.7 }}
+            >
+      <div className={`container-fade ${fadeOut ? "fade-out" : "fade-in"}`} >
         <div className="about-product">
           {selectedSubOption === "Arches" && (
             <div className="menu-item">
@@ -220,6 +246,9 @@ const Products = () => {
           )}
         </div>
       </div>
+
+      </motion.div>
+
     </div>
   );
 };

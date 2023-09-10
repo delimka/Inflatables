@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Typography and Base Styles */
 :root {
   font-family: "Roboto", sans-serif;
@@ -76,6 +77,7 @@
 @media only screen and (max-width: 470px) {
   p {
     font-size: 15px;
+
   }
 
   .heading-1 {

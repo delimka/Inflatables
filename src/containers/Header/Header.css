@@ -21,6 +21,9 @@
   z-index: -1;
 }
 
+.arrow{
+  padding-left: 20px;
+}
 .p__mission {
   display: block;
   width: 400px;
@@ -28,6 +31,8 @@
   margin-top: 430px;
   color: rgb(235, 222, 222);
   font-size: 24px;
+  text-align: none;
+
 }
 
 .header__container--mission {

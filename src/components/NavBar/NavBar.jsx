@@ -6,10 +6,25 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import ContactUsModal from "../ContactUsModal/ContactUsModal";
 
+const MenuItem = ({ to, text, onClick }) => (
+  <li className="menuList">
+    <Link
+      to={to}
+      spy={true}
+      smooth={true}
+      duration={300}
+      offset={-80}
+      onClick={onClick}
+    >
+      {text}
+    </Link>
+  </li>
+);
+
 const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [menuVisible, setMenuVisible] = useState(false); // for navbar menu screen widt
-  const [modalIsOpen, setModalIsOpen] = useState(false); // for contact button
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const navbar = document.querySelector(".navbar");
@@ -58,7 +73,7 @@ const NavBar = () => {
 
   const openModal = () => {
     setModalIsOpen(true);
-    setMenuVisible(false); // Hide the menu when modal is open
+    setMenuVisible(false);
   };
 
   const closeModal = () => {
@@ -81,9 +96,7 @@ const NavBar = () => {
         smooth={true}
         duration={300}
         offset={-80}
-        onClick={() => {
-          handleBurgerClick();
-        }}
+        onClick={handleBurgerClick}
       >
         <div className={`bar ${menuVisible ? "active" : ""}`}></div>
         <div className={`bar ${menuVisible ? "active" : ""}`}></div>
@@ -91,54 +104,10 @@ const NavBar = () => {
       </Link>
 
       <ul className={`menu ${menuVisible ? "visible" : ""} list-none`}>
-        {/* smooth navigation */}
         <img src={images.logo} alt="Logo" className="burgerlogo" />
-
-        <li className="menuList">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            duration={300}
-            offset={-80}
-            onClick={() => {
-              handleCloseClick();
-              closeModal();
-            }}
-          >
-            Home
-          </Link>
-        </li>
-        <li className="menuList">
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={300}
-            offset={-80}
-            onClick={() => {
-              handleCloseClick();
-              closeModal();
-            }}
-          >
-            About us
-          </Link>
-        </li>
-        <li className="menuList">
-          <Link
-            to="products"
-            spy={true}
-            smooth={true}
-            duration={300}
-            offset={-80}
-            onClick={() => {
-              handleCloseClick();
-              closeModal();
-            }}
-          >
-            Products
-          </Link>
-        </li>
+        <MenuItem to="home" text="Home" onClick={handleCloseClick} />
+        <MenuItem to="about" text="About us" onClick={handleCloseClick} />
+        <MenuItem to="products" text="Products" onClick={handleCloseClick} />
         <li className="menuList">
           <Link
             to="contact"
@@ -164,4 +133,5 @@ const NavBar = () => {
     </nav>
   );
 };
+
 export default NavBar;
