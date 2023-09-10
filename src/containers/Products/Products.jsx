@@ -190,10 +190,9 @@ const Products = () => {
 
       
       <motion.div
-              
               initial={{ opacity: 0, y: 100}}
               animate={controls}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 0.7 }}
             >
       <div className={`container-fade ${fadeOut ? "fade-out" : "fade-in"}`} >
         <div className="about-product">
